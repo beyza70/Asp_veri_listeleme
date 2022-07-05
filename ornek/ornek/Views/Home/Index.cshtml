@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<h4>Beyzanur KALE</h4>
+<h4>181312020</h4>
+
+<h1>----------------------Market Ürünlerini Fiyata Göre Listeleme---------------------</h1> 
+
+<h3>Fiyata Göre Listelemek İçin Fiyat Butonuna Basınız.</h3>
+<link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-lg-12">
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th>  Id  </th>
+                    <th>  katagori  </th>
+                    <th>  urunAdi  </th>
+                    <th>  Fiyat  </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.katagori</td>
+                        <td>@item.urunAdi</td>
+                        <td>@item.Fiyat</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+</script>
